@@ -1,0 +1,43 @@
+step1: create ann environment
+conda create -n linearapp python==3.6.9
+step2: now navigate towards the folder containing project
+step3: now  install requirement
+pip install -r requirements.txt
+step 4: now set interpreter in pycharm
+step5: open git bash
+git init
+git add .
+git status
+git commit -m "initial commit"
+heroku create
+git remote -v
+git push heroku master
+
+
+
+
+'''
+for AWS
+Point 1. Your main python file name should be application.py
+Point 2. Your flask object name, which we have defined in application.py should also be the application.
+Point 3. .ebignore  is responsible to hold the name of those files which we don't want to push on a cloud.
+Point 4. Create a requirements.txt file.
+        Command : pip freeze > requirements.txt
+Point 5. Create a folder called .ebextensions
+Point 6. Inside .ebextensions we need a python.config file.
+Point 7. Mention the commands in python.config
+            option_settings:
+              "aws:elasticbeanstalk:container:python":
+                WSGIPath: application:application
+
+
+
+
+Summary
+Create a AWS account
+Make your application ready
+            Point 1. Your main python file name should be application.py
+            Point 2. Your flask object name, which we have defined in application.py should also be the application.
+            Point 3. .ebignore  is responsible to hold the name of those files which we don't want to push on a cloud
+
+'''
